@@ -1,0 +1,1 @@
+package fi.laurea.diary.main;
