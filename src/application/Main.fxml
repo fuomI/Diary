@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <top>
+      <AnchorPane prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: #088BA0;" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <AnchorPane prefHeight="338.0" prefWidth="600.0" style="-fx-background-color: #FFFCF0;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="saveEntry" contentDisplay="TOP" layoutX="708.0" layoutY="181.0" mnemonicParsing="false" onAction="#SaveEntry" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #088BA0;" text="SAVE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Button>
+            <Button fx:id="cancelEntry" layoutX="637.0" layoutY="181.0" mnemonicParsing="false" onAction="#CancelEntry" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #EA8978;" text="CANCEL" textFill="WHITE">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="10.0" />
+               </font>
+            </Button>
+            <TextField fx:id="userTextInput" alignment="TOP_LEFT" layoutX="30.0" layoutY="59.0" prefHeight="106.0" prefWidth="742.0" promptText="ENTRY" />
+            <TextField fx:id="userTitleInput" layoutX="30.0" layoutY="25.0" prefHeight="27.0" prefWidth="741.0" promptText="TITLE" />
+            <Label fx:id="fieldForEntries" alignment="TOP_LEFT" layoutX="30.0" layoutY="225.0" prefHeight="365.0" prefWidth="744.0" stylesheets="@application.css">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Button fx:id="oldEntries" contentDisplay="TOP" layoutX="30.0" layoutY="181.0" mnemonicParsing="false" onAction="#oldEntries" prefHeight="25.0" style="-fx-background-color: #088BA0;" text="OLD ENTRIES" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

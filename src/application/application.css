@@ -1,0 +1,5 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+#fieldForEntries:nth-row(3n+1) {
+	-fx-font-weight: bold;
+}
