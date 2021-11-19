@@ -18,9 +18,13 @@ We only have local database using MySQL community server.
 Credits:
 
 Project lead: Elina Henttonen
+
 Secretary: Samuli Tyyskä
+
 Planning: Elina Henttonen, Samuli Tyyskä, Saara Ikonen, Joni Jansson, Linda Foxell & Teemu Tuunanen
+
 FXML (GUI): Saara Ikonen
+
 Java coding: Joni Jansson
 
 Readme by: Joni Jansson
