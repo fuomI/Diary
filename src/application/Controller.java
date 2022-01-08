@@ -38,7 +38,7 @@ public class Controller {
     String headline;
     
     List<Node> entryList = new ArrayList<>();
-    
+      
     @FXML
     void SaveEntry(ActionEvent event) {
     	
@@ -50,7 +50,7 @@ public class Controller {
     	String formattedDate = sdf.format(date);
     	
     	// Adds the new desired entry to the field for entries.
-    	addTextToLabel(entry, headline, formattedDate);
+    	addEntryToTextArea(entry, headline, formattedDate);
     	
     	// Saves the entry to the database also.
     	addEntryToDatabase(entry, headline, formattedDate);
@@ -80,8 +80,8 @@ public class Controller {
     }
     
     
-    // This method updates the field for entries when a new entry is added. And also updates the database.
-    void addTextToLabel (String entry, String headline, String date) {	
+    // This method updates the field for entries when a new entry is added.
+    void addEntryToTextArea (String entry, String headline, String date) {	
     	
     	String wholeEntry = "\n" + headline + " " + date + "\n" + entry + "\n";
     	
@@ -138,6 +138,9 @@ public class Controller {
         Statement statement = null;
         ResultSet resultSet = null;
         
+        // We need a list for entries to switch the order in which the entries are displayed.
+        ArrayList<Entry> entries = new ArrayList<>();
+        
 		connection = DatabaseConnection.getConnection();
 		
 		try {
@@ -154,11 +157,18 @@ public class Controller {
     			String dbHeadline = resultSet.getString("headline");
     			String dbEntryDate = resultSet.getString("entryDate");
     			
-    			addTextToLabel(dbEntry, dbHeadline, dbEntryDate);		 
+    			Entry thisEntry = new Entry(dbHeadline, dbEntry, dbEntryDate);
+    			
+    			entries.add(thisEntry);
+	 
     		}		
 		} catch (Exception e) {
 			System.out.println(e);
 		}
     	
+		// We add the most recent entry last.
+		for (int i = entries.size() - 1; i > -1; i--) {
+			addEntryToTextArea(entries.get(i).getEntry(), entries.get(i).getTitle() , entries.get(i).getDate());
+		}
     }
 }
