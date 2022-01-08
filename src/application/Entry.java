@@ -6,7 +6,7 @@ public class Entry {
 	private String entry;
 	private String date;
 	
-	public Entry(String title, String entry, String date) {
+	public Entry(String entry, String title, String date) {
 		
 		this.title = title;
 		this.entry = entry;

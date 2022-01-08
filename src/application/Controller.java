@@ -38,7 +38,10 @@ public class Controller {
     }
     
     String entry;
-    String headline;   
+    String headline;
+    
+    // We need a list for entries to switch the order in which the entries are displayed.
+    ArrayList<Entry> entries = new ArrayList<>();
       
     @FXML
     void SaveEntry(ActionEvent event) {
@@ -50,7 +53,7 @@ public class Controller {
     	String formattedDate = sdf.format(date);
     	
     	// Adds the new desired entry to the field for entries.
-    	addEntryToTextArea(entry, headline, formattedDate);
+    	addNewEntry(entry, headline, formattedDate);
     	
     	// Saves the entry to the database also.
     	addEntryToDatabase(entry, headline, formattedDate);
@@ -68,10 +71,28 @@ public class Controller {
     	userTitleInput.setText("");
 
     }
+    
+    void addNewEntry(String entry, String title, String date) {
+    	
+    	Entry thisEntry = new Entry(entry, title, date);	
+		entries.add(thisEntry);
+		
+		int j = entries.size() -1;
+				
+		// Clears the TextArea so that it can be rearranged.
+		fieldForEntries.setText("");
+		
+		// Adds all entries, most recent on top.
+		for (int i = entries.size() - 1; i > -1; i--) {
+			addEntryToTextArea(entries.get(i).getEntry(), entries.get(i).getTitle() , entries.get(i).getDate());
+		}
+		
+		
+    }
          
     // This method updates the field for entries when a new entry is added.
     void addEntryToTextArea (String entry, String headline, String date) {	
-    	
+    	   	
     	String wholeEntry = "\n" + headline + " " + date + "\n" + entry + "\n";
     	
     	fieldForEntries.setText(fieldForEntries.getText() + wholeEntry);
@@ -126,10 +147,7 @@ public class Controller {
     	Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
-        
-        // We need a list for entries to switch the order in which the entries are displayed.
-        ArrayList<Entry> entries = new ArrayList<>();
-        
+               
 		connection = DatabaseConnection.getConnection();
 		
 		try {
