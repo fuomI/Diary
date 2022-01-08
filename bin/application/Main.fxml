@@ -26,11 +26,6 @@
             </Button>
             <TextField fx:id="userTextInput" alignment="TOP_LEFT" layoutX="30.0" layoutY="59.0" prefHeight="106.0" prefWidth="742.0" promptText="ENTRY" />
             <TextField fx:id="userTitleInput" layoutX="30.0" layoutY="25.0" prefHeight="27.0" prefWidth="741.0" promptText="TITLE" />
-            <Button fx:id="oldEntries" contentDisplay="TOP" layoutX="30.0" layoutY="181.0" mnemonicParsing="false" onAction="#oldEntries" prefHeight="25.0" style="-fx-background-color: #088BA0;" text="OLD ENTRIES" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="10.0" />
-               </font>
-            </Button>
             <TextArea fx:id="fieldForEntries" layoutX="30.0" layoutY="230.0" prefHeight="386.0" prefWidth="741.0">
                <font>
                   <Font size="14.0" />

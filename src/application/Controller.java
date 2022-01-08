@@ -2,14 +2,12 @@ package application;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -23,9 +21,6 @@ public class Controller {
     private Button saveEntry;
     
     @FXML
-    private Button oldEntries;
-
-    @FXML
     private TextField userTextInput;
 
     @FXML
@@ -34,15 +29,20 @@ public class Controller {
     @FXML 
     private TextArea fieldForEntries;
     
-    String entry;
-    String headline;
+    @FXML
+    public void initialize() {
+  
+    	if (fieldForEntries.getText().isEmpty()) {
+    		getEntriesFromDatabase();
+    	}
+    }
     
-    List<Node> entryList = new ArrayList<>();
+    String entry;
+    String headline;   
       
     @FXML
     void SaveEntry(ActionEvent event) {
-    	
-    	
+    	  	
     	headline = userTitleInput.getText();
     	entry = userTextInput.getText();
     	Date date = new Date();
@@ -60,7 +60,6 @@ public class Controller {
     	userTitleInput.setText("");
     }
 
-
     @FXML
     void CancelEntry(ActionEvent event) {
     	
@@ -69,17 +68,7 @@ public class Controller {
     	userTitleInput.setText("");
 
     }
-    
-    @FXML 
-    void oldEntries(ActionEvent event) {
-    	
-    	if (fieldForEntries.getText().isEmpty()) {
-    		getEntriesFromDatabase();
-    	}
-
-    }
-    
-    
+         
     // This method updates the field for entries when a new entry is added.
     void addEntryToTextArea (String entry, String headline, String date) {	
     	
