@@ -2,11 +2,14 @@ package application;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -29,10 +32,12 @@ public class Controller {
     private TextField userTitleInput;
     
     @FXML 
-    private Label fieldForEntries;
+    private TextArea fieldForEntries;
     
     String entry;
     String headline;
+    
+    List<Node> entryList = new ArrayList<>();
     
     @FXML
     void SaveEntry(ActionEvent event) {
