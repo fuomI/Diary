@@ -8,9 +8,9 @@ public class DatabaseConnection {
 
     public static Connection getConnection() {
 
-        final String dbUrl = "jdbc:mysql://localhost:3306/diary";  
-        final String dbUsername = "root";
-        final String dbPassword = "paniikkiIsR34L-";
+        final String dbUrl = "";  
+        final String dbUsername = "";
+        final String dbPassword = "";
 
         try {
             connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);

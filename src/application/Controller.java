@@ -72,28 +72,39 @@ public class Controller {
 
     }
     
+    @FXML
+    void deleteMostRecentEntry(ActionEvent event) {
+    	int j = entries.size() -1;
+    	
+    	entries.remove(j);
+    	
+    	updateEntries();    	
+    }
+    
+    void updateEntries() {
+    	
+    	// Clears the TextArea so that it can be rearranged.
+    	fieldForEntries.setText("");
+    			
+    	// Adds all entries, most recent on top.
+    	for (int i = entries.size() - 1; i > -1; i--) {
+    		addEntryToTextArea(entries.get(i).getEntry(), entries.get(i).getTitle() , entries.get(i).getDate());
+    	}		
+    	
+    }
+    
     void addNewEntry(String entry, String title, String date) {
     	
     	Entry thisEntry = new Entry(entry, title, date);	
 		entries.add(thisEntry);
-		
-		int j = entries.size() -1;
-				
-		// Clears the TextArea so that it can be rearranged.
-		fieldForEntries.setText("");
-		
-		// Adds all entries, most recent on top.
-		for (int i = entries.size() - 1; i > -1; i--) {
-			addEntryToTextArea(entries.get(i).getEntry(), entries.get(i).getTitle() , entries.get(i).getDate());
-		}
-		
-		
+						
+		updateEntries();
     }
          
     // This method updates the field for entries when a new entry is added.
     void addEntryToTextArea (String entry, String headline, String date) {	
     	   	
-    	String wholeEntry = "\n" + headline + " " + date + "\n" + entry + "\n";
+    	String wholeEntry = headline + " " + date + "\n" + entry + "\n\n";
     	
     	fieldForEntries.setText(fieldForEntries.getText() + wholeEntry);
     }
