@@ -84,7 +84,7 @@ https://www.youtube.com/watch?v=2HQC94la6go&t=3s&ab_channel=BlaineRobertson
  
 Video instructions that I made:
 
-![intro](video/intro.mp4 "intro")
+![How_to_set_up_Diary](https://youtu.be/WPQ_Po6dUvk)
 
 Download Eclipse IDE: https://www.eclipse.org/downloads/
 Download JDBC driver: https://dev.mysql.com/downloads/connector/j/
