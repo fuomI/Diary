@@ -39,10 +39,11 @@ https://www.youtube.com/watch?v=2HQC94la6go&t=3s&ab_channel=BlaineRobertson
 - JavaFX library (GUI)
 - JDBC API (MySQL Database connection)
 - MySQL Workbench (Monitoring the database)
+- Scenebuilder (GUI editor)
 
 ## Functionalities then
 
-- **Graphical user interface**
+- **Graphical user interface (FXML)**
 	- Text input fields (Saara)
 	- Save, Cancel buttons (Saara)
 	- Old entries button (Joni)
