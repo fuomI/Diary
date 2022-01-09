@@ -82,9 +82,7 @@ https://www.youtube.com/watch?v=2HQC94la6go&t=3s&ab_channel=BlaineRobertson
 
 ## How to run?
  
-Video instructions that I made:
-
-![How_to_set_up_Diary](https://youtu.be/WPQ_Po6dUvk)
+Video instructions that I made: https://youtu.be/WPQ_Po6dUvk
 
 Download Eclipse IDE: https://www.eclipse.org/downloads/
 Download JDBC driver: https://dev.mysql.com/downloads/connector/j/
