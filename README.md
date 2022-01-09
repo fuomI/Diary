@@ -90,7 +90,7 @@ Download Eclipse IDE: https://www.eclipse.org/downloads/
 
 Download JDBC driver: https://dev.mysql.com/downloads/connector/j/
 
-DOwnload JavaFX: https://gluonhq.com/products/javafx/
+Download JavaFX: https://gluonhq.com/products/javafx/
 (Choose SDK for your respective OS)
 
 
