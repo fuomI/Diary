@@ -85,7 +85,8 @@ https://www.youtube.com/watch?v=2HQC94la6go&t=3s&ab_channel=BlaineRobertson
 Video instructions that I made: https://youtu.be/WPQ_Po6dUvk
 
 Download Eclipse IDE: https://www.eclipse.org/downloads/
-Download JDBC driver: https://dev.mysql.com/downloads/connector/j/
+
+ownload JDBC driver: https://dev.mysql.com/downloads/connector/j/
 
 DOwnload JavaFX: https://gluonhq.com/products/javafx/
 (Choose SDK for your respective OS)
