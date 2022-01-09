@@ -52,9 +52,10 @@ https://www.youtube.com/watch?v=2HQC94la6go&t=3s&ab_channel=BlaineRobertson
 	- Controller class (link between GUI and Methods)
 	- Main class
 
-- User can add entries
-- Old entries can be brought back from "Old entries" -button
-- Entries displayed inside a label (bad solution)
+- **Functionalities**
+	- User can add entries
+	- Old entries can be brought back from "Old entries" -button
+	- Entries displayed inside a label (bad solution)
 
 ## Functionalities now
 
@@ -70,19 +71,20 @@ https://www.youtube.com/watch?v=2HQC94la6go&t=3s&ab_channel=BlaineRobertson
 	- Entry class
 	- Main class
 	
-- User can add entries
-- When adding an entry, it shows on top as it is the most recent 
-- Entries brought from database are arranged properly (most recent on top)
-- Old entries are brought when application is started, Old entries button removed
-- User can now delete most recent entry
-- Changed Textfield from label element to TextArea element,
-  now every entry can be seen thanks to the scrollbar
+- **Functionalities**	
+	- User can add entries
+	- When adding an entry, it shows on top as it is the most recent 
+	- Entries brought from database are arranged properly (most recent on top)
+	- Old entries are brought when application is started, Old entries button removed
+	- User can now delete most recent entry
+	- Changed Textfield from label element to TextArea element,
+	  now every entry can be seen thanks to the scrollbar
 
 ## How to run?
  
 Video instructions that I made:
 
-![Diary_how_to_run](video/Diary_how_to_run.mp4 "Diary_how_to_run")
+![intro](video/intro.mp4 "intro")
 
 Download Eclipse IDE: https://www.eclipse.org/downloads/
 Download JDBC driver: https://dev.mysql.com/downloads/connector/j/
