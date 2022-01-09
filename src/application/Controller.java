@@ -78,7 +78,47 @@ public class Controller {
     	
     	entries.remove(j);
     	
-    	updateEntries();    	
+    	updateEntries();
+    	 	
+    	// Delete from database also.
+    	Connection connection = null;
+        Statement statementOne = null;
+        ResultSet resultSet = null;
+        Statement statementTwo = null;
+        int mostRecentID = 0;
+        
+		connection = DatabaseConnection.getConnection();
+		
+    	try {
+    		
+    		statementOne = connection.createStatement();
+    		
+    		String query = "SELECT MAX(entries.entryID) FROM entries";
+    		
+    		resultSet = statementOne.executeQuery(query);
+    		
+    		while (resultSet.next()) {
+    			mostRecentID = resultSet.getInt("MAX(entries.entryID)");
+    		}
+    		
+    		
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+    	
+    	try {
+    		    		
+    		statementTwo = connection.createStatement();
+    			
+    		String deleteEntry = "DELETE FROM entries WHERE entryID='" + mostRecentID + "'";  		
+    		
+    		statementTwo.executeUpdate(deleteEntry);
+    		 		
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+    	
     }
     
     void updateEntries() {
